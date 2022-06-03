@@ -18,7 +18,7 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) {
         Yaml yaml = new Yaml(new Constructor(CIModel.class));
-        CIModel ciModel = yaml.load(App.class.getClassLoader().getResourceAsStream("CI-Specification.yaml"));
+        CIModel ciModel = yaml.load(App.class.getClassLoader().getResourceAsStream("ci-specification.yaml"));
         String content = generateFile(ciModel);
         System.out.println(content);
     }
