@@ -1,0 +1,27 @@
+# CI Sidecar api version
+apiVersion: v1alpha
+
+# application part
+name: springboot-demo # application code
+description: A standard ci file # note
+provider: gitlab # ci provider should be enabled
+runtime: java-8
+
+# basic 
+## optional
+
+# stage
+stages:
+  - stage: build # except branch feature
+    except:
+      - feature
+      
+  - stage: release # only tags
+    only:
+      - tags
+
+before:
+  - auto_devops
+variables:
+  - $HELLO_WORLD: "1"
+  - $SAD_WORLD: "0"
