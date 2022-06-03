@@ -5,6 +5,7 @@ import gl.linpeng.ci.model.SidecarConfiguration;
 import gl.linpeng.ci.provider.CIProvider;
 import gl.linpeng.ci.provider.ProviderManager;
 import gl.linpeng.ci.validate.SidecarChecker;
+import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
@@ -49,7 +50,9 @@ public class App {
         provider.generateStages(ciModel, config, targetCIMap);
 
         // render to content
-        return new Yaml().dump(targetCIMap);
+        DumperOptions options = new DumperOptions();
+        options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
+        return new Yaml(options).dump(targetCIMap);
     }
 
 }
