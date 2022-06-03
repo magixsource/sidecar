@@ -5,6 +5,17 @@ import gl.linpeng.ci.enums.ProviderEnum;
 import gl.linpeng.ci.enums.RuntimeEnum;
 import gl.linpeng.ci.model.CIModel;
 
+/**
+ * Sidecar checker
+ * <ul>
+ * <li>version check</li>
+ * <li>provider check</li>
+ * <li>runtime check</li>
+ * <ul/>
+ *
+ * @author lin.peng
+ * @since v1alpha
+ */
 public class SidecarChecker {
     /**
      * Check CI file is valid
